@@ -1,0 +1,13 @@
+#First get the users input as a string
+user_input = str(input("Enter a phrase: "))
+#We then use the split() function to split the sentence
+text = user_input.split()
+#Then we declare a new variable 'a'
+a = " "
+#Then we run a for loop that represents the split of user input
+#While running the for loop we are storing the index value
+#of str[0] of every word after a split and turning it into an
+#uppercase format by using the upper() function
+for i in text:
+    a = a + str(i[0]).upper()
+print(a)
