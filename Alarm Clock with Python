@@ -1,0 +1,48 @@
+#Import datetime module
+from datetime import datetime
+#Import playsound module
+from playsound import playsound
+#Assigns the users input to the 
+alarm_time = input("Enter the time of alarm to be set:HH:MM::SS\n")
+#Sets alarm_hour to the indexs of 0 and 1 of alarm_time
+alarm_hour = alarm_time[0:2]
+#Sets alarm_minutes to the indexs of 3 and 4 of alarm_time
+alarm_minute = alarm_time[3:5]
+#Sets alarm_seconds to the indexs of 6 and 7 of alarm_time
+alarm_seconds = alarm_time[6:8]
+#Sets alarm_period to the indexs of 9 and 10 of alarm_time
+alarm_period = alarm_time[9:11].upper()
+#Displays "Setting up alarm..." to the screen
+print("Setting up alarm...")
+#Starts a while loop as long as the statement is True
+while True:
+    #This gets the current date and time with datetime.now()
+    now = datetime.now()
+    #We are giving current_hour the value of
+    #now.strftime which gives the format of
+    #%I which relates to a 12 hour clock as a
+    #zero added decimal number
+    current_hour = now.strftime("%I")
+    #Same thing as current_hour except in the format
+    #of %M which relates to a minute as a zero added
+    #decimal number
+    current_minute = now.strftime("%M")
+    #Same thing, except in the format of %S
+    #which relates to a second as a zero added
+    #decimal number
+    current_seconds = now.strftime("%S")
+    #Same thing, but in the format of %p which
+    #relates to the PM and not the AM 
+    current_period = now.strftime("%p")
+    #if alarm_period equals current_period, it executes
+    #statement
+    if (alarm_period == current_period):
+        #if alarm_hour equals current_hour it executes statement
+        if (alarm_hour == current_hour):
+            #if alarm_minute equals current_minute it executes statement
+            if (alarm_minute == current_minute):
+                #if alarm_seconds equals current_seconds it executes statement
+                if (alarm_seconds == current_seconds):
+                    print("Wake up!")
+                    playsound('audio.mp3')
+                    break
