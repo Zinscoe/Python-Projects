@@ -1,0 +1,9 @@
+#We get the users input and use the strip() function to remove unwanted space and assign it to the email variable
+email = input("Enter your email: ").strip()
+#We are getting the index of email starting from the beginning all the way to the '@' sign and then assigning it to
+#the username variable
+username = email[:email.index("@")]
+#We start getting the index of email after the '@' and assign it to the domain variable
+domain_name = email[email.index("@") + 1:]
+#We then print out the statement below to the screen
+print("Your username is " + username + " and your domain is " + domain_name + ".")
