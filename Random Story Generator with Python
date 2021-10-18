@@ -1,0 +1,17 @@
+#Import the random module
+import random
+#Then we create an array of different times and place them in variable of when
+when = ['A few years ago', 'Yesterday', 'Last night', 'In a galaxy far, far away']
+#Then we create an array of living organisms that go into a variable of who
+who = ['a Jedi', 'a rabbit', 'a mouse', 'a turtle', 'a cat']
+#Then we create an array of names that are put into a variable of name
+name = ['Ali', 'Miriam', 'Daniel', 'Zach', 'Skywalker']
+#Then we create an array of places that we put into a variable of residence
+residence = ['Tattooine', 'Barcelona', 'Paris', 'Myrtle Beach']
+#Then we create an array of specific places and put them in a variable of went
+went = ['theaters', 'school', 'work', 'laundry']
+#Create an array of things that happened and place into a variable of happened
+happened = ['made a lot of friends', 'took care of Sith lords', 'found a secret key', 'solved a mystery']
+#We then structure a statement to output to the screen with random.choice of each variable created
+#of arrays
+print(random.choice(when) + ',' + random.choice(who) + ' that lived in ' + random.choice(residence) + ', went to the ' + random.choice(went) + ' and ' + random.choice(happened) + '.')
