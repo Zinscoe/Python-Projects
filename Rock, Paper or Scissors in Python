@@ -1,0 +1,49 @@
+#Imports random module from Python
+import random
+#Make a an array of Rock, Paper and Scissors and assign to variable 'choices'
+choices = ["Rock", "Paper", "Scissors"]
+#Sets player to false due to not having an input yet
+player = False
+#Sets cpu_score value to 0
+cpu_score = 0
+#Sets player_score value to 0
+player_score = 0
+#Run a while loop while the 'player' has an input
+while True:
+    #Set a random choice of the choices variable by typing
+    #random.choice(choices) and assign it to the computer variable
+    computer = random.choice(choices)
+    #Gets player's input of Rock, Paper or Scissors and automatically
+    #Puts User's input to capitalize it
+    player = input("Rock, Paper or Scissors?").capitalize()
+    #Conditions of computer and player choices
+    if player == computer:
+        print("Tie!")
+    elif player == "Rock":
+        if computer == "Paper":
+            print("You lose..." , computer, "covers", player)
+            cpu_score += 1
+        else:
+            print("You win!", player, "smashes", computer)
+            player_score += 1
+    elif player == "Paper":
+        if computer == "Scissors":
+            print("You lose...", computer, "cuts", player)
+            cpu_score += 1
+        else:
+            print("You win!", player, "covers", computer)
+            player_score += 1
+    elif player == "Scissors":
+        if computer == "Rock":
+            print("You lose...", computer, "smashes", player)
+            cpu_score += 1
+        else:
+            print("You win!", player, "cuts", computer)
+            player_score += 1
+    #If player doesn't want to play anymore, they type in 'End' 
+    #And receive the computer and player scores
+    elif player == "End":
+        print("Final Scores:")
+        print(f"CPU:{cpu_score}")
+        print(f"Player:{player_score}")
+        break
