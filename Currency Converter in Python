@@ -1,0 +1,12 @@
+from forex_python.converter import CurrencyRates
+
+c = CurrencyRates()
+#Create the 'amount' variable to get a value of the User's input and assigns the input as an integer
+amount = int(input("Enter the amount: "))
+from_currency = input("From Currency: ").upper()
+to_currency = input("To Currency: ").upper()
+#Displays the 'from_currency' value and 'to' and 'to_currency' value on screen
+print(from_currency, " to ", to_currency, amount)
+result = c.converter(from_currency, to_currency, amount)
+#Displays the 'result' value to the screen
+print(result)
