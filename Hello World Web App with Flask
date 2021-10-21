@@ -1,0 +1,22 @@
+#First install flask which you'll use either 'pip' or 'pip3', pending which Python version you have
+pip install flask
+
+#Next we are creating a file called hello.py with the following code
+
+#This import Flask
+from flask import flask
+#This instantiates Flask with the 'app' variable, using the __name__ attribute
+app = Flask(__name__)
+
+#This sets up a route / for your default page
+@app.route("/")
+#Next we create a function called hello
+    def hello():
+        #this returns the string 'Hello World!' to the user
+        return "Hello World!"
+#this will test to make sure the script is being ran
+if __name__ == "__main__":
+    #this runs the application from the 'app' variable so the user can visit the web application
+    app.run()
+
+
