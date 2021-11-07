@@ -1,0 +1,35 @@
+#First import the libraries
+from tkinter import Label, Tk
+import time
+
+#Then we define the application
+app_window = Tk()
+
+#This defines the title of the aookication
+app_window.title("Digital Clock")
+app_window.geometry("420x150")
+
+#This sets both the height and width to a fixed window
+app_window.resizable(1,1)
+
+#Now to define the text font of the time and it's color
+text_font = ("Boulder", 68, 'bold')
+
+#And set the color of the background of the clock
+background = "#f2e750"
+foreground = "#363529"
+border_width = 25
+
+#Now we combine all elements to define the label of the clock application
+label = Label(app_window, font = text_font, bg = background, fg = foreground, bd = border_width)
+label.grid(row = 0, column = 1)
+
+#Now to define the main function of the digital clock
+def digital_clock():
+    time_live = time.strftime("%H:%M:%S")
+    label.config(text = time_live)
+    label.after(200, digital_clock)
+
+#Then we call the function
+digital_clock()
+app_window.mainloop()
