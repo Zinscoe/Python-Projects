@@ -1,0 +1,36 @@
+# So using a phone camera with Python is very useful. It allows you to create computer vision apps
+# That will use a smartphone camera as a part of the application.
+
+# Here's the process of using the phone camera with Python:
+# First install the openCV library in python by typing:     pip install opencv-python
+# Then download and install the IP Webcam application on your smartphone
+# After installing the application, make sure your phone and PC are connected to the same network
+# Then run the app on your phone and click Start Server
+# After doing so, your camera will open with an IP address at the bottom. Copy the IP as you'll need it for
+# the python code to open your phone's camera.
+
+# Import the cv2 module
+import cv2
+
+# Then we import the NumPy library and set it as the 'np' variable
+import numpy as np
+
+# Set the 'url' variable as your IP address
+url = "Your IP Address/video"
+
+# This uses the VideoCapture method within the cv2 module with the 'url' variable as the parameter
+cp = cv2.VideoCapture(url)
+
+while(True):
+    
+    # This captures frame by frame
+    camera, frame = cap.read()
+    if frame is not None:
+      # If frame isn't empty then it displays the resulting frame
+      cv2.imshow("Frame", frame)
+    q = cv2.waitKey(1)
+    if q == ord("q"):
+      break
+      
+# This function allows the user to destroy all windows at any time
+cv2.destroyAllWindows()
