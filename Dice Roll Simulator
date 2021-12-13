@@ -1,0 +1,25 @@
+#Import the random module
+import random
+
+#Then we set the range of values on a dice
+min_val = 1
+max_val = 6
+
+#Sets roll_again to 'yes'
+roll_again = "yes"
+
+#Set while loop that continues to run while roll_again is equal to 'y' or 'yes'
+while roll_again == "yes" or roll_again == "y":
+
+  #Outputs these statements to the screen
+  print("Rolling The Dices...")
+  print("The values are: ")
+  
+  #Generate and print 1st random number from 1 to 6
+  print(random.randint(min_val, max_val)
+  
+  #Generate and print 2nd random number from 1 to 6
+  print(random.randint(min_val,max_val)
+  
+  #Now asking the user to roll again. If 'y' or 'yes' then the while loop will continue, else it will not.
+  roll_again = input("Roll the Dices again?")
